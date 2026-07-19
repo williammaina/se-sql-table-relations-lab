@@ -1,3 +1,8 @@
+Here is the completed python script filled out for each lab requirement.
+
+Since the data type of the `amount` column in Part 3 might be stored as text, we've safely casted it using `CAST(amount AS REAL)` to ensure it sorts correctly by numerical value.
+
+```python
 # STEP 0
 
 # SQL Library and Pandas Library
@@ -50,7 +55,7 @@ df_contacts = pd.read_sql("""
 
 # STEP 5
 # Part 3: Customer contacts along with details for payment amounts and dates.
-# Sorted in descending order by payment amount (casted to handle text datatype issues).
+# Sorted in descending order by payment amount (casted to handles text datatype issues).
 df_payment = pd.read_sql("""
     SELECT c.contactFirstName, c.contactLastName, p.amount, p.paymentDate
     FROM customers c
@@ -123,3 +128,5 @@ df_under_20 = pd.read_sql("""
 """, conn)
 
 conn.close()
+
+```
